@@ -1,12 +1,7 @@
 {
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "functions": {
-    "server.js": {
-      "includeFiles": "assets/**"
-    }
-  },
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/assets/images/opt/(.*)",

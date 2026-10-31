@@ -2,10 +2,10 @@
   "name": "skyyards-bareilly",
   "version": "1.0.0",
   "description": "Skyyards Bareilly - Real Estate Consulting Website (Cloned from Square Yards design system & populated with Skyyards Bareilly entities)",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "build": "echo Static build complete",
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "skyyards",
