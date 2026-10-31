@@ -1,0 +1,12 @@
+/* QR Widget & App Download Fully Disabled */
+.qr-widget, #qr-download-widget, .qr-widget-full, .qr-widget-mini, .qr-widget-content, .qr-widget-qr, .qr-widget-label, .qr-widget-arrow-tab {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: fixed !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}

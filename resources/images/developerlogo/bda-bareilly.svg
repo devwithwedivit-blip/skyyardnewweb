@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+      <rect width="200" height="80" rx="8" fill="#ffffff"/>
+      <polygon points="35,22 47,32 47,54 23,54 23,32" fill="#047857"/>
+      <circle cx="35" cy="40" r="6" fill="#ffffff"/>
+      <text x="58" y="44" font-family="'Poppins', sans-serif" font-size="20" font-weight="800" fill="#065f46" letter-spacing="1">BDA</text>
+      <text x="59" y="58" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#64748b" letter-spacing="1.5">APPROVED</text>
+    </svg>

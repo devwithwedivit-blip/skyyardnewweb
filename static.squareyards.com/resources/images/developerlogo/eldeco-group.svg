@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+      <rect width="200" height="80" rx="8" fill="#ffffff"/>
+      <circle cx="36" cy="40" r="18" fill="#0284c7" opacity="0.15"/>
+      <path d="M26 40 L36 28 L46 40 L36 52 Z" fill="#0284c7"/>
+      <text x="62" y="45" font-family="'Poppins', sans-serif" font-size="22" font-weight="700" fill="#0369a1" letter-spacing="0.5">ELDECO</text>
+      <text x="63" y="59" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="2">CITY BAREILLY</text>
+    </svg>
