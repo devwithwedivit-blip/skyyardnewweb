@@ -4562,20 +4562,7 @@ One thing Skyyards Bareilly needs to address is their data collection process. T
   
       
       
-        if(document.querySelectorAll('.megaMenuData .megaDropDownLinks').length){
-          document.querySelectorAll('.megaMenuData .megaDropDownLinks').forEach(function(element, index) {
-            let targetTab = element.getAttribute('data-tab');
-            if(targetTab){
-              document.querySelector(`.desktopNav li .megaDropDownLinks[data-tab="${targetTab}"]`).innerHTML = element.innerHTML;
-            }
-            element.remove();
-          });
-          document.querySelector('.megaMenuData').remove();	
-        }
-      
-      
-      
-    </script>
+</script>
     <script>
   const pageIdentifier = 'Home Page';
   var pageGroup = "HOME-PAGE";

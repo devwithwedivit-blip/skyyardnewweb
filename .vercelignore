@@ -1,0 +1,10 @@
+# Node server & build scripts (pure static deployment on Vercel)
+server.js
+build_*.js
+verify_*.js
+check_*.js
+test_*.js
+find_*.js
+read_*.js
+poll_status.js
+*.ps1
