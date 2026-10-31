@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Skyyards Bareilly - Real Estate Consulting Website (Cloned from Square Yards design system & populated with Skyyards Bareilly entities)",
   "scripts": {
-    "build": "echo Static build complete",
+    "build": "node build_static.js",
     "dev": "node server.js",
     "start": "node server.js"
   },
