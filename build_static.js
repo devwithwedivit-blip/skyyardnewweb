@@ -7,12 +7,24 @@ if (fs.existsSync(outDir)) {
 }
 fs.mkdirSync(outDir, { recursive: true });
 
-// Copy html files
-const htmlFiles = ['index.html', 'kings-crest.html', 'olive-homes.html', 'about-us.html', 'contact-us.html', 'robots.txt', 'sitemap.xml'];
-htmlFiles.forEach(f => {
+// Copy html and static files
+const staticFiles = [
+  'index.html',
+  'kings-crest.html',
+  'olive-homes.html',
+  'about-us.html',
+  'contact-us.html',
+  'favicon.ico',
+  'robots.txt',
+  'sitemap.xml'
+];
+
+staticFiles.forEach(f => {
   if (fs.existsSync(f)) {
     fs.copyFileSync(f, path.join(outDir, f));
     console.log(`Copied ${f} to public/`);
+  } else {
+    console.warn(`Warning: ${f} not found in root!`);
   }
 });
 

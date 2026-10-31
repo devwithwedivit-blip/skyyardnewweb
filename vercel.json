@@ -1,7 +1,7 @@
 {
+  "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
-  "outputDirectory": "public",
   "headers": [
     {
       "source": "/assets/images/opt/(.*)",

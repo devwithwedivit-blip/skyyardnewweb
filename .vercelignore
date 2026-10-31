@@ -1,0 +1,14 @@
+# Scratch / Migration / Offline build scripts
+build_skyyards_clone.js
+build_subpages.js
+create_true_clone.js
+remove_city_dropdown.js
+transform_exact_squareyards.js
+*.bak
+*.jsonl
+phase1_inventory.json
+phase1_measurements.json
+phase3_measurements.json
+image_map.json
+original_squareyards.html
+skyyards_cookies.txt
