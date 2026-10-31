@@ -13,6 +13,9 @@
     "real-estate"
   ],
   "author": "Skyyards Bareilly",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.64.1",
+    "sharp": "^0.35.5"
+  }
 }
-

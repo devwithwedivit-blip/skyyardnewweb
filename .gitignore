@@ -16,3 +16,7 @@ original_squareyards.html
 .DS_Store
 Thumbs.db
 
+
+phase1_*.json
+phase3_*.json
+image_map.json

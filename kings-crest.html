@@ -83,6 +83,8 @@
     .footerBottomRow { border-top: 1px solid #1e293b; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; }
   </style>
 
+
+<link rel="preload" as="image" imagesrcset="assets/images/opt/kings-crest.1f2cc8e0-480.avif 480w, assets/images/opt/kings-crest.1f2cc8e0-800.avif 800w, assets/images/opt/kings-crest.1f2cc8e0-1060.avif 1060w" imagesizes="(max-width: 768px) 100vw, 800px" fetchpriority="high">
 </head>
 <body>
   
@@ -139,7 +141,11 @@
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:30px;">
       <div>
         <div class="card" style="padding:0;overflow:hidden;">
-          <img src="assets/images/projects/kings-crest.png" alt="Kings Crest Duplex Villa" style="width:100%;height:400px;object-fit:cover;">
+          <picture>
+      <source type="image/avif" srcset="assets/images/opt/kings-crest.1f2cc8e0-480.avif 480w, assets/images/opt/kings-crest.1f2cc8e0-800.avif 800w, assets/images/opt/kings-crest.1f2cc8e0-1060.avif 1060w" sizes="(max-width: 768px) 100vw, 800px">
+      <source type="image/webp" srcset="assets/images/opt/kings-crest.1f2cc8e0-480.webp 480w, assets/images/opt/kings-crest.1f2cc8e0-800.webp 800w, assets/images/opt/kings-crest.1f2cc8e0-1060.webp 1060w" sizes="(max-width: 768px) 100vw, 800px">
+      <img src="assets/images/opt/kings-crest.1f2cc8e0-1060.jpg" alt="Kings Crest Duplex Villa" width="1060" height="1080" style="width:100%;height:400px;object-fit:cover;" loading="eager" fetchpriority="high" decoding="sync">
+    </picture>
           <div style="padding:24px;">
             <h2 style="font-family:'Poppins', sans-serif;font-size:24px;font-weight:700;color:#1e293b;margin:0 0 10px 0;">Project Overview</h2>
             <p style="color:#475569;line-height:1.8;font-size:15px;">
@@ -178,8 +184,16 @@
         <div class="card">
           <h3 style="font-family:'Poppins', sans-serif;font-size:18px;font-weight:700;color:#1e293b;margin:0 0 16px 0;">Kings Crest Project Layout &amp; Visuals</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <img src="assets/images/projects/kings-crest-duplex.png" alt="Kings Crest Duplex Brochure" style="width:100%;height:260px;object-fit:cover;border-radius:10px;">
-            <img src="assets/images/projects/jhm-joy.jpg" alt="Kings Crest Community" style="width:100%;height:260px;object-fit:cover;border-radius:10px;">
+            <picture>
+    <source type="image/avif" srcset="assets/images/opt/kings-crest-duplex.64ec8152-480.avif 480w, assets/images/opt/kings-crest-duplex.64ec8152-800.avif 800w, assets/images/opt/kings-crest-duplex.64ec8152-1080.avif 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <source type="image/webp" srcset="assets/images/opt/kings-crest-duplex.64ec8152-480.webp 480w, assets/images/opt/kings-crest-duplex.64ec8152-800.webp 800w, assets/images/opt/kings-crest-duplex.64ec8152-1080.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <img style="width:100%;height:260px;object-fit:cover;border-radius:10px;" alt="Kings Crest Duplex Brochure" src="assets/images/opt/kings-crest-duplex.64ec8152-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" >
+  </picture>
+            <picture>
+    <source type="image/avif" srcset="assets/images/opt/jhm-joy.03fdf48e-480.avif 480w, assets/images/opt/jhm-joy.03fdf48e-800.avif 800w, assets/images/opt/jhm-joy.03fdf48e-1080.avif 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <source type="image/webp" srcset="assets/images/opt/jhm-joy.03fdf48e-480.webp 480w, assets/images/opt/jhm-joy.03fdf48e-800.webp 800w, assets/images/opt/jhm-joy.03fdf48e-1080.webp 1080w" sizes="(max-width: 768px) 100vw, 800px">
+    <img style="width:100%;height:260px;object-fit:cover;border-radius:10px;" alt="Kings Crest Community" src="assets/images/opt/jhm-joy.03fdf48e-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" >
+  </picture>
           </div>
         </div>
       </div>
