@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Skyyards Bareilly - Real Estate Consulting Website",
   "scripts": {
-    "build": "node build_static.js",
-    "dev": "serve public"
+    "build_static": "node build_static.js"
   },
   "keywords": [
     "skyyards",
@@ -14,8 +13,6 @@
   "author": "Skyyards Bareilly",
   "license": "ISC",
   "devDependencies": {
-    "playwright": "^1.64.1",
-    "serve": "^14.2.6",
-    "sharp": "^0.35.5"
+    "serve": "^14.2.6"
   }
 }
