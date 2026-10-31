@@ -283,11 +283,35 @@ header nav, header .desktopNav, header .navItem {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.price-insight, .discover-more, .localitygroup, .client-reviews, .faq, footer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
+
+</style>
+
+<style id="layoutAndVisibilityFixes">
+/* Guaranteed display for Hot Selling projects */
+.hot-selling .focus-cards,
+.hot-selling .focus-project-box {
+    display: flex !important;
+    gap: 15px !important;
+    overflow-x: auto !important;
+}
+
+/* Picture element compatibility */
+picture {
+    display: contents !important;
+}
+figure picture, .focus-card picture, .group-card picture, .collection-card picture, .affordable-property picture {
+    display: contents !important;
+}
+
+/* Property Price Insights: Show strictly the single selected place row, hide other 4 */
+.price-insight-india .insight-box.india {
+    display: none !important;
+}
+.price-insight-india .insight-box.india.active {
+    display: block !important;
 }
 </style>
+
 </head>
   <body>
           <div id="dev_headeroverlay" style="width:100%;height:100vh;position:fixed;top:0;left:0;z-index:2;display:none;"></div>
@@ -1082,7 +1106,7 @@ header nav, header .desktopNav, header .navItem {
             </div>
         </div>
         
-    <div class="insight-box india dohra-road active">
+    <div class="insight-box india dohra-road active" style="display: block !important;">
         <div class="white-body">
             <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
@@ -1322,7 +1346,7 @@ header nav, header .desktopNav, header .navItem {
     </div>
   
 
-    <div class="insight-box india civil-lines ">
+    <div class="insight-box india civil-lines" style="display: none !important;">
         <div class="white-body">
             <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
@@ -1562,7 +1586,7 @@ header nav, header .desktopNav, header .navItem {
     </div>
   
 
-    <div class="insight-box india pilibhit-bypass ">
+    <div class="insight-box india pilibhit-bypass" style="display: none !important;">
         <div class="white-body">
             <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
@@ -1802,7 +1826,7 @@ header nav, header .desktopNav, header .navItem {
     </div>
   
 
-    <div class="insight-box india rampur-garden ">
+    <div class="insight-box india rampur-garden" style="display: none !important;">
         <div class="white-body">
             <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
@@ -2042,7 +2066,7 @@ header nav, header .desktopNav, header .navItem {
     </div>
   
 
-    <div class="insight-box india bada-bypass ">
+    <div class="insight-box india bada-bypass" style="display: none !important;">
         <div class="white-body">
             <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
@@ -4617,7 +4641,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 2. Price Insights tabs
+    // 2. Price Insights tabs (guaranteed minimal single row switching)
     document.querySelectorAll('.price-insight-india .tab-box li').forEach(function(tab) {
         tab.addEventListener('click', function() {
             var city = this.getAttribute('data-city');
@@ -4626,8 +4650,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.price-insight-india .insight-box.india').forEach(function(box) {
                 if (box.classList.contains(city)) {
                     box.classList.add('active');
+                    box.style.setProperty('display', 'block', 'important');
                 } else {
                     box.classList.remove('active');
+                    box.style.setProperty('display', 'none', 'important');
                 }
             });
         });
