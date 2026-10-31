@@ -18,7 +18,8 @@ const mimeMap = {
   '.woff': 'font/woff',
   '.ttf': 'font/ttf',
   '.json': 'application/json',
-  '.pdf': 'application/pdf'
+  '.pdf': 'application/pdf',
+  '.ico': 'image/x-icon'
 };
 
 const server = http.createServer((req, res) => {
@@ -29,6 +30,12 @@ const server = http.createServer((req, res) => {
 
   // If path doesn't exist, check fallback
   if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+    // If it's an asset or image, NEVER serve index.html
+    if (reqPath.startsWith('/assets/') || reqPath.endsWith('.avif') || reqPath.endsWith('.webp') || reqPath.endsWith('.png') || reqPath.endsWith('.jpg') || reqPath.endsWith('.svg')) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Asset not found');
+      return;
+    }
     filePath = path.join(__dirname, 'index.html');
   }
 
@@ -41,9 +48,10 @@ const server = http.createServer((req, res) => {
       res.end('File not found');
       return;
     }
+    const isImmutable = reqPath.includes('/assets/images/opt/');
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Cache-Control': 'public, max-age=3600'
+      'Cache-Control': isImmutable ? 'public, max-age=31536000, immutable' : 'public, max-age=604800'
     });
     res.end(data);
   });
@@ -54,3 +62,4 @@ server.listen(PORT, () => {
   console.log(`📁 Serving directory: ${__dirname}`);
 });
 
+module.exports = server;
