@@ -1,4 +1,7 @@
-# Node server & build scripts (pure static deployment on Vercel)
+# Ignore Node package files on Vercel to force Zero-Config Pure Static Site
+package.json
+package-lock.json
+node_modules/
 server.js
 build_*.js
 verify_*.js
@@ -6,5 +9,6 @@ check_*.js
 test_*.js
 find_*.js
 read_*.js
-poll_status.js
+remove_*.js
+poll_*.js
 *.ps1
