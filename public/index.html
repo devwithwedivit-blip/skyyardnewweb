@@ -670,6 +670,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
 }
 </style>
 
+    <link rel="stylesheet" href="assets/css/dohra-insights.css">
 </head>
   <body>
           <div id="dev_headeroverlay" style="width:100%;height:100vh;position:fixed;top:0;left:0;z-index:2;display:none;"></div>
@@ -1466,7 +1467,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
         
     <div class="insight-box india dohra-road active" style="display: block !important;">
         <div class="white-body">
-            <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
+            <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" id="dohraInsightCardsRow" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;">
                 
                 <!-- 1. Property Rates Heatmap -->
                 <article class="price-insight heatmap" style="width:291px;flex:none;border-radius:12px;border:1px solid #e2e8f0;background:#ffffff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.05);overflow:hidden;">
@@ -1490,7 +1491,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
   </picture>
                         </figure>
                     </div>
-                    <a class="btn" href="#hot-selling" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;">Explore Rates <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></a> 
+                    <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('heatmap')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;cursor:pointer;">Explore Rates <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></button> 
                 </article>
 
                 
@@ -1566,9 +1567,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
         </div>
 
         <!-- Footer Action Button -->
-        <a class="btn" href="#hot-selling" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;">
-            View Price History <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
-        </a>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('trend')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;cursor:pointer;">View Price History <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></button>
     </article>
   
 
@@ -1647,9 +1646,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
         </div>
 
         <!-- Footer Action Button -->
-        <a class="btn" href="#hot-selling" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;">
-            View Verified Listings <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
-        </a>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('listings')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;cursor:pointer;">View Verified Listings <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></button>
     </article>
   
 
@@ -1696,10 +1693,12 @@ img, svg, video, canvas, audio, iframe, embed, object {
                             </div>
                         </div>
                     </div>
-                    <a class="btn" href="contact-us.html" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;">Get Deal Insights <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></a>
+                    <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('deals')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;text-decoration:none;cursor:pointer;">Get Deal Insights <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em></button>
                 </article>
 
             </div>
+            <!-- Detailed Views Container -->
+            <div id="dohraInsightDetailContainer" class="dohra-detail-container" style="display:none;"></div>
         </div>
     </div>
   
@@ -4632,5 +4631,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+    <script src="assets/js/dohra-insights.js"></script>
 </body>
 </html>

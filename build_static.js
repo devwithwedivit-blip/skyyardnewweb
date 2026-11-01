@@ -10,6 +10,7 @@ fs.mkdirSync(outDir, { recursive: true });
 // Copy html and static files
 const staticFiles = [
   'index.html',
+  'dohra-road.html',
   'kings-crest.html',
   'olive-homes.html',
   'about-us.html',

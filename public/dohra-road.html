@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dohra Road Bareilly | Real Estate Price Insights, Plots & Luxury Villas | Skyyards</title>
+  <meta name="description" content="Explore Dohra Road, Bareilly real estate. Live property rates heatmap, quarterly price trend history (Q4 '25 to Q3 '26), 1,420+ active verified listings, and official govt registered deeds.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="icon" type="image/png" href="assets/images/skyyards-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="fonts.googleapis.com/css2.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fonts/projectV2/moonicon-158cf97e06.min.css">
+  <link rel="stylesheet" href="assets/css/critical-home.css">
+  <link rel="stylesheet" href="assets/css/dohra-insights.css">
+
+  <style>
+    :root {
+      --primary: #d92228;
+      --primary-hover: #b9151b;
+      --secondary: #1e3a8a;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --light-bg: #f8fafc;
+    }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    header.outer {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      height: 72px;
+    }
+    .logoBox { display: flex; align-items: center; gap: 12px; }
+    .logoBox img { max-height: 48px; width: auto; object-fit: contain; }
+    .logoText .brandName { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 800; color: #1e293b; }
+    .logoText .brandName span { color: var(--primary); }
+    .logoText .brandTag { font-size: 10px; font-weight: 600; color: #64748b; letter-spacing: 1.5px; }
+    nav .desktopNav ul.navItem { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    nav .desktopNav ul.navItem li a { color: #334155; text-decoration: none; font-weight: 600; font-size: 14px; transition: color 0.2s; }
+    nav .desktopNav ul.navItem li a:hover { color: var(--primary); }
+    .headerRightSide { display: flex; align-items: center; gap: 14px; }
+    .headerCallBtn { display: flex; align-items: center; gap: 6px; color: #1e293b; font-weight: 700; text-decoration: none; font-size: 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; font-size: 14px; }
+    .btn.loginBtn { background: var(--primary); color: #fff; border: 1px solid var(--primary); }
+    .btn.loginBtn:hover { background: var(--primary-hover); }
+
+    .localityHero {
+      background: linear-gradient(135deg, #09233c 0%, #1e3a8a 100%);
+      color: #fff;
+      padding: 50px 20px 40px;
+      position: relative;
+    }
+    .sectionContainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .badgeYellow { background: #ffd916; color: #1e293b; }
+    .heroStats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .statBox {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .statBox .num { font-size: 24px; font-weight: 800; color: #ffd916; display: block; }
+    .statBox .lbl { font-size: 12px; color: #e2e8f0; margin-top: 4px; display: block; }
+
+    .price-insight {
+      width: 285px;
+      flex: none;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .price-insight-banner {
+      padding: 14px 16px;
+      position: relative;
+    }
+    .price-insight-banner-info {
+      margin-top: 10px;
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .price-insight-heading {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .projectCard {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+    }
+    .projectCard:hover {
+      transform: translateY(-4px);
+    }
+    .projectCard img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .projectBody {
+      padding: 18px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #fff;
+      padding: 50px 20px 30px;
+      margin-top: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+      header.outer { padding: 10px 14px; height: 60px; }
+      nav .desktopNav { display: none !important; }
+      .headerRightSide { gap: 8px; }
+      .heroStats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="active outer">
+    <div class="logoBox">
+      <a href="index.html" title="Skyyards Bareilly" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <img alt="Skyyards Bareilly Logo" class="img-responsive" src="assets/images/skyyards-logo.png" onerror="this.src='assets/images/squareyards.png'">
+        <div class="logoText">
+          <span class="brandName">SKY<span>YARDS</span></span>
+          <span class="brandTag">BAREILLY REAL ESTATE</span>
+        </div>
+      </a>
+    </div>
+
+    <nav>
+      <div class="desktopNav">
+        <ul class="navItem">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kings-crest.html">Kings Crest</a></li>
+          <li><a href="olive-homes.html">Olive Homes</a></li>
+          <li><a href="dohra-road.html" style="color:var(--primary);font-weight:700;">Dohra Road</a></li>
+          <li><a href="index.html#hot-selling">All Projects</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="headerRightSide">
+      <a href="tel:08534026777" class="headerCallBtn">
+        <em class="icon-phone"></em> 08534026777
+      </a>
+      <a href="contact-us.html" class="btn loginBtn">
+        Schedule Visit
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="localityHero">
+    <div class="sectionContainer">
+      <div style="font-size:12px;color:#93c5fd;margin-bottom:8px;">
+        <a href="index.html" style="color:#93c5fd;text-decoration:none;">Home</a> / 
+        <a href="index.html#localities-section" style="color:#93c5fd;text-decoration:none;">Bareilly Localities</a> / 
+        <strong style="color:#fff;">Dohra Road</strong>
+      </div>
+      <span class="badge badgeYellow">Premier Growth Corridor</span>
+      <h1 style="font-size:32px;font-weight:800;line-height:1.2;margin:6px 0 12px;">Dohra Road, Bareilly — Real Estate & Price Insights</h1>
+      <p style="font-size:15px;color:#e2e8f0;max-width:850px;line-height:1.6;margin:0;">
+        Bareilly's premier 4-lane arterial avenue connecting Bareilly Airport, Rohilkhand Medical & IT University, JHM Ace Commercial Hub, and prestigious gated duplex villa communities. Explore live property rates, quarterly appreciation trajectory, active listings, and official stamp registry data.
+      </p>
+
+      <div class="heroStats">
+        <div class="statBox">
+          <span class="num">₹ 4,250</span>
+          <span class="lbl">Avg. Asking Rate / Sq.Ft</span>
+        </div>
+        <div class="statBox">
+          <span class="num">+18.1%</span>
+          <span class="lbl">1-Year Capital Appreciation</span>
+        </div>
+        <div class="statBox">
+          <span class="num">1,420+</span>
+          <span class="lbl">Active Verified Listings</span>
+        </div>
+        <div class="statBox">
+          <span class="num">14,820</span>
+          <span class="lbl">Govt. Registered Deeds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Locality Insights Section -->
+  <section class="sectionContainer" style="padding-top:40px;padding-bottom:40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;">
+      <div>
+        <h2 style="font-size:24px;font-weight:700;color:#0f172a;margin:0 0 6px;">Dohra Road Property Price Insights</h2>
+        <p style="font-size:14px;color:#64748b;margin:0;">Click any card's action button below to open its complete interactive detailed view.</p>
+      </div>
+      <span style="font-size:12px;color:#0e9f6e;font-weight:700;background:#def7ec;padding:5px 12px;border-radius:20px;">
+        ● Live Dohra Road Market Data
+      </span>
+    </div>
+
+    <!-- 4 Insight Cards Row -->
+    <div class="bxslider price-insight-box scrollbar-hide priceInsightSection" id="dohraInsightCardsRow" style="display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;">
+      
+      <!-- 1. Property Rates Heatmap -->
+      <article class="price-insight heatmap" style="width:285px;flex:none;border-radius:12px;border:1px solid #e2e8f0;background:#ffffff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.05);overflow:hidden;">
+        <div>
+          <div class="price-insight-banner" style="background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);padding:14px 16px;position:relative;border-bottom:1px solid #bae6fd;"> 
+            <div style="padding-right:40px;">
+              <strong class="price-insight-heading" style="color:#0369a1;">Property Rates Heatmap</strong>
+              <span style="font-size:12px;color:#0284c7;line-height:1.2;margin:0;display:block;">in Dohra Road, Bareilly</span>
+            </div>
+            <div class="price-insight-banner-info" style="margin-top:10px;background:#ffffff;border:1px solid #7dd3fc;border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:6px;">
+              <em class="icon-idea" style="font-size:16px;color:#0284c7;flex-shrink:0;"></em>
+              <span style="font-size:11px;color:#0369a1;line-height:1.4;margin:0;">Bareilly's Premier IT & Medical Corridor</span>
+            </div>
+            <div class="logo-box" style="position:absolute;top:12px;right:12px;background:#e0f2fe;border:1px solid #bae6fd;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#0284c7;"><em class="icon-price-trend"></em></div>
+          </div>
+          <figure style="margin:14px 16px;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc;height:165px;">
+            <img class="img-responsive" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Property Rates Heatmap Dohra Road Bareilly" src="assets/images/opt/property-rates-heatmap-img.71681bab-610.png" loading="lazy">
+          </figure>
+        </div>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('heatmap')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;cursor:pointer;">
+          Explore Rates <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
+        </button>
+      </article>
+
+      <!-- 2. Price Trend -->
+      <article class="price-insight price-trend" id="priceTrendArticle-dohra-road" style="width:285px;flex:none;border-radius:12px;border:1px solid #e2e8f0;background:#ffffff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.05);overflow:hidden;">
+        <div>
+          <div class="price-insight-banner" style="background:linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);padding:14px 16px;position:relative;border-bottom:1px solid #fef08a;">
+            <div style="padding-right:40px;">
+              <strong class="price-insight-heading" style="color:#854d0e;">Price Trend</strong>
+              <span style="font-size:12px;color:#a16207;line-height:1.2;margin:0;display:block;">in Dohra Road, Bareilly</span>
+            </div>
+            <div class="price-insight-banner-info" style="margin-top:10px;background:#ffffff;border:1px solid #fde047;border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:6px;">
+              <em class="icon-idea" style="font-size:16px;color:#ca8a04;flex-shrink:0;"></em>
+              <span style="font-size:11px;color:#854d0e;line-height:1.4;margin:0;">Average asking price is rising quarter-on-quarter (+12.4% YoY).</span>
+            </div>
+            <div class="logo-box" style="position:absolute;top:12px;right:12px;background:#fef9c3;border:1px solid #fef08a;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ca8a04;"><em class="icon-price-trend"></em></div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <div>
+                <span style="font-size:20px;font-weight:800;color:#1e293b;">₹ 4,250</span>
+                <span style="font-size:11.5px;color:#64748b;"> /sq.ft</span>
+              </div>
+              <span style="background:#def7ec;color:#0e9f6e;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:700;">+12.4% YoY</span>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 6px 4px;margin-bottom:10px;">
+              <svg viewBox="0 0 250 95" style="width:100%;height:95px;display:block;overflow:visible;">
+                <defs>
+                  <linearGradient id="trend-grad-dohra" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ffd916" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#ffd916" stop-opacity="0.0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 25 56 Q 58.5 44.5 92 43 T 158 28 T 225 12 L 225 70 L 25 70 Z" fill="url(#trend-grad-dohra)" />
+                <path d="M 25 56 Q 58.5 44.5 92 43 T 158 28 T 225 12" fill="none" stroke="#eab308" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="70" x2="238" y2="70" stroke="#cbd5e1" stroke-width="1"/>
+                <circle cx="25" cy="56" r="4" fill="#eab308" stroke="#ffffff" stroke-width="2" />
+                <text x="25" y="48" text-anchor="middle" font-size="9" font-weight="700" fill="#854d0e">₹3,600</text>
+                <text x="25" y="84" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">Q4 '25</text>
+                <circle cx="92" cy="43" r="4" fill="#eab308" stroke="#ffffff" stroke-width="2" />
+                <text x="92" y="35" text-anchor="middle" font-size="9" font-weight="700" fill="#854d0e">₹3,850</text>
+                <text x="92" y="84" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">Q1 '26</text>
+                <circle cx="158" cy="28" r="4" fill="#eab308" stroke="#ffffff" stroke-width="2" />
+                <text x="158" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#854d0e">₹4,050</text>
+                <text x="158" y="84" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">Q2 '26</text>
+                <circle cx="225" cy="12" r="4" fill="#eab308" stroke="#ffffff" stroke-width="2" />
+                <text x="225" y="4" text-anchor="middle" font-size="9" font-weight="700" fill="#854d0e">₹4,250</text>
+                <text x="225" y="84" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">Q3 '26</text>
+              </svg>
+            </div>
+            <div style="font-size:11px;color:#64748b;text-align:center;">
+              <strong>Appreciation Pace:</strong> Stable capital growth in Bareilly
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('trend')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;cursor:pointer;">
+          View Price History <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
+        </button>
+      </article>
+
+      <!-- 3. Asking Price -->
+      <article class="price-insight market-supply" id="dataPriceInsightsArticle-dohra-road" style="width:285px;flex:none;border-radius:12px;border:1px solid #e2e8f0;background:#ffffff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.05);overflow:hidden;">
+        <div>
+          <div class="price-insight-banner" style="background:linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);padding:14px 16px;position:relative;border-bottom:1px solid #fed7aa;">
+            <div style="padding-right:40px;">
+              <strong class="price-insight-heading" style="color:#9a3412;">Asking Price</strong>
+              <span style="font-size:12px;color:#c2410c;line-height:1.2;margin:0;display:block;">in Dohra Road, Bareilly</span>
+            </div>
+            <div class="price-insight-banner-info" style="margin-top:10px;background:#ffffff;border:1px solid #fdba74;border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:6px;">
+              <em class="icon-idea" style="font-size:16px;color:#ea580c;flex-shrink:0;"></em>
+              <span style="font-size:11px;color:#9a3412;line-height:1.4;margin:0;">Dohra Road has 1,420+ Listings with Median ₹ 3.85 K/Sq.Ft.</span>
+            </div>
+            <div class="logo-box" style="position:absolute;top:12px;right:12px;background:#ffedd5;border:1px solid #fed7aa;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#ea580c;"><em class="icon-price-trend"></em></div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <span style="font-size:12px;color:#64748b;font-weight:600;">Median Asking Rate:</span>
+              <span style="font-size:17px;font-weight:800;color:#1e293b;">₹ 3.85 K /Sq.Ft.</span>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:8px 4px 4px;margin-bottom:10px;">
+              <svg viewBox="0 0 250 120" style="width:100%;height:120px;display:block;overflow:visible;">
+                <line x1="10" y1="95" x2="242" y2="95" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                <text x="33" y="64" text-anchor="middle" font-size="9" font-weight="600" fill="#64748b">140</text>
+                <rect x="21" y="70" width="24" height="25" rx="3" fill="#cbd5e1"  />
+                <text x="33" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b"><2.5K</text>
+                <text x="74" y="39" text-anchor="middle" font-size="9" font-weight="600" fill="#64748b">320</text>
+                <rect x="62" y="45" width="24" height="50" rx="3" fill="#cbd5e1"  />
+                <text x="74" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">3K</text>
+                <text x="115" y="17" text-anchor="middle" font-size="9" font-weight="bold" fill="#b45309">580</text>
+                <rect x="103" y="23" width="24" height="72" rx="3" fill="#ffd916" stroke="#eab308" stroke-width="1.5" />
+                <text x="115" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">4K</text>
+                <text x="156" y="47" text-anchor="middle" font-size="9" font-weight="600" fill="#64748b">260</text>
+                <rect x="144" y="53" width="24" height="42" rx="3" fill="#cbd5e1"  />
+                <text x="156" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">5K</text>
+                <text x="197" y="71" text-anchor="middle" font-size="9" font-weight="600" fill="#64748b">90</text>
+                <rect x="185" y="77" width="24" height="18" rx="3" fill="#cbd5e1"  />
+                <text x="197" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">6.5K</text>
+                <text x="238" y="79" text-anchor="middle" font-size="9" font-weight="600" fill="#64748b">30</text>
+                <rect x="226" y="85" width="24" height="10" rx="3" fill="#cbd5e1"  />
+                <text x="238" y="112" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748b">7K+</text>
+              </svg>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#64748b;">
+              <span><strong style="color:#1e293b;">1,420+</strong> Active Listings</span>
+              <span style="background:#fef3c7;color:#92400e;padding:2px 7px;border-radius:4px;font-weight:700;font-size:10.5px;">Peak: Core Demand</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('listings')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;cursor:pointer;">
+          View Verified Listings <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
+        </button>
+      </article>
+
+      <!-- 4. Govt. Registrations -->
+      <article class="price-insight govt-resgistration" style="width:285px;flex:none;border-radius:12px;border:1px solid #e2e8f0;background:#ffffff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.05);overflow:hidden;">
+        <div>
+          <div class="price-insight-banner" style="background:linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);padding:14px 16px;position:relative;border-bottom:1px solid #fbcfe8;">
+            <div style="padding-right:40px;">
+              <strong class="price-insight-heading" style="color:#9d174d;">Govt. Registrations</strong>
+              <span style="font-size:12px;color:#be185d;line-height:1.2;margin:0;display:block;">in Dohra Road, Bareilly</span>
+            </div>
+            <div class="price-insight-banner-info" style="margin-top:10px;background:#ffffff;border:1px solid #f472b6;border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:6px;">
+              <em class="icon-idea" style="font-size:16px;color:#db2777;flex-shrink:0;"></em>
+              <span style="font-size:11px;color:#9d174d;line-height:1.4;margin:0;">14,820 Deals Registered at Avg. ₹ 3,450/Sq.Ft.</span>
+            </div>
+            <div class="logo-box" style="position:absolute;top:12px;right:12px;background:#fce7f3;border:1px solid #fbcfe8;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#db2777;"><em class="icon-price-trend"></em></div>
+          </div>
+          <div class="insight-widget" style="padding:14px 16px;">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="font-size:12px;color:#475569;font-weight:600;">Sales Deeds</span>
+                <strong style="font-size:15px;color:#1e293b;">14,820</strong>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="font-size:12px;color:#475569;font-weight:600;">Gross Value</span>
+                <strong style="font-size:15px;color:#1e293b;">₹ 3,485 Cr</strong>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="font-size:12px;color:#475569;font-weight:600;">Registered Rate</span>
+                <strong style="font-size:15px;color:#1e293b;">₹ 3,450/sq.ft</strong>
+              </div>
+            </div>
+            <div style="margin-top:10px;font-size:10.5px;color:#94a3b8;text-align:center;">
+              Official IGRSUP Bareilly Stamp Registry Records
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn dohra-insight-btn" onclick="openDohraInsightView('deals')" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:6px;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:13.5px;font-weight:700;color:#1e293b;cursor:pointer;">
+          Get Deal Insights <em class="icon-arrow-up-b" style="transform:rotate(90deg);"></em>
+        </button>
+      </article>
+
+    </div>
+
+    <!-- Detailed Views Container (Dynamic) -->
+    <div id="dohraInsightDetailContainer" class="dohra-detail-container" style="display:none;"></div>
+  </section>
+
+  <!-- Featured Projects on Dohra Road -->
+  <section class="sectionContainer" style="padding-top:20px;padding-bottom:50px;">
+    <h2 style="font-size:24px;font-weight:700;color:#0f172a;margin:0 0 8px;">Featured Projects on Dohra Road</h2>
+    <p style="font-size:14px;color:#64748b;margin:0 0 24px;">BDA & RERA approved landmark residential villas & commercial properties.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;">
+      <!-- Kings Crest -->
+      <article class="projectCard">
+        <img src="assets/images/projects/kings-crest.png" alt="Kings Crest Dohra Road">
+        <div class="projectBody">
+          <span class="badge badgeYellow">3 BHK Duplex Villas</span>
+          <h3 style="font-size:18px;font-weight:700;color:#0f172a;margin:4px 0 6px;">King's Crest</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 12px;">Dohra Road (Near Airport Avenue)</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:17px;color:#d92228;">₹ 85 Lac*</strong>
+            <a href="kings-crest.html" class="btn" style="background:#0f172a;color:#fff;padding:6px 14px;font-size:12px;">View Project</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- King's Avenue -->
+      <article class="projectCard">
+        <img src="assets/images/projects/kings-avenue.jpg" alt="King's Avenue Dohra Road">
+        <div class="projectBody">
+          <span class="badge" style="background:#e0f2fe;color:#0369a1;">Modern Villas</span>
+          <h3 style="font-size:18px;font-weight:700;color:#0f172a;margin:4px 0 6px;">King's Avenue</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 12px;">Main Dohra 4-Lane Avenue</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:17px;color:#d92228;">₹ 75 Lac*</strong>
+            <a href="contact-us.html" class="btn" style="background:#0f172a;color:#fff;padding:6px 14px;font-size:12px;">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- JHM Joy -->
+      <article class="projectCard">
+        <img src="assets/images/projects/jhm-joy.jpg" alt="JHM Joy Dohra Road">
+        <div class="projectBody">
+          <span class="badge" style="background:#def7ec;color:#03543f;">Gated Living</span>
+          <h3 style="font-size:18px;font-weight:700;color:#0f172a;margin:4px 0 6px;">JHM Joy Residency</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 12px;">Dohra Road Institutional Belt</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:17px;color:#d92228;">₹ 72 Lac*</strong>
+            <a href="contact-us.html" class="btn" style="background:#0f172a;color:#fff;padding:6px 14px;font-size:12px;">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- JHM Ace Commercial -->
+      <article class="projectCard">
+        <img src="assets/images/projects/jhm-ace-commercial.jpg" alt="JHM Ace Commercial Dohra Road">
+        <div class="projectBody">
+          <span class="badge" style="background:#f3e8ff;color:#6b21a8;">Commercial Hub</span>
+          <h3 style="font-size:18px;font-weight:700;color:#0f172a;margin:4px 0 6px;">JHM Ace Commercial</h3>
+          <p style="font-size:13px;color:#64748b;margin:0 0 12px;">Main Dohra Commercial Strip</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:17px;color:#0f172a;">Showrooms & Offices</strong>
+            <a href="contact-us.html" class="btn" style="background:#0f172a;color:#fff;padding:6px 14px;font-size:12px;">Enquire</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="sectionContainer">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:30px;padding-bottom:30px;border-bottom:1px solid #334155;">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <img src="assets/images/skyyards-logo.png" alt="Skyyards Bareilly" style="height:36px;width:auto;" onerror="this.src='assets/images/squareyards.png'">
+            <span style="font-family:'Poppins', sans-serif;font-size:18px;font-weight:800;color:#fff;">SKY<span style="color:#ffd916;">YARDS</span></span>
+          </div>
+          <p style="color:#94a3b8;font-size:12.5px;line-height:1.6;">
+            Sky Yards Bareilly is a premier real estate consulting firm founded on Commitment, Honesty and Reliability. Assisting homebuyers, plot investors, and businesses with 100% verified properties.
+          </p>
+        </div>
+        <div>
+          <h4 style="font-size:15px;color:#fff;margin-bottom:12px;">Corporate Office</h4>
+          <p style="color:#94a3b8;font-size:13px;line-height:1.6;">
+            SKY YARDS, JHM Ace Commercial, Dohra Road, Bareilly, Uttar Pradesh 243005<br>
+            📞 <a href="tel:08534026777" style="color:#fff;text-decoration:none;">08534026777</a>, <a href="tel:08218095851" style="color:#fff;text-decoration:none;">08218095851</a>
+          </p>
+        </div>
+        <div>
+          <h4 style="font-size:15px;color:#fff;margin-bottom:12px;">Bareilly Key Localities</h4>
+          <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:2;">
+            <li><a href="dohra-road.html" style="color:#ffd916;text-decoration:none;font-weight:700;">Dohra Road Bareilly</a></li>
+            <li><a href="olive-homes.html" style="color:#94a3b8;text-decoration:none;">Lalpur &amp; Bada Bypass</a></li>
+            <li><a href="index.html#localities-section" style="color:#94a3b8;text-decoration:none;">Nainital Road</a></li>
+            <li><a href="index.html#localities-section" style="color:#94a3b8;text-decoration:none;">Civil Lines Bareilly</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding-top:20px;text-align:center;font-size:12px;color:#64748b;">
+        © 2026 Sky Yards Bareilly. All Rights Reserved. Corporate HQ: JHM Ace Commercial, Dohra Road, Bareilly U.P. 243005
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/dohra-insights.js"></script>
+</body>
+</html>

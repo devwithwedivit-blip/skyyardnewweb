@@ -1,0 +1,807 @@
+/* Dohra Road Locality Insights Detailed Views Styling */
+.dohra-detail-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    color: #1e293b;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Header & Navigation Bar */
+.dohra-detail-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.dohra-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    line-height: normal;
+}
+
+.dohra-back-btn:hover {
+    background: #e2e8f0;
+    color: #000000;
+    border-color: #94a3b8;
+    transform: translateX(-2px);
+}
+
+.dohra-breadcrumb {
+    font-size: 12px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dohra-breadcrumb span.sep {
+    color: #cbd5e1;
+}
+
+.dohra-breadcrumb strong {
+    color: #1e293b;
+}
+
+/* View Switcher Tabs */
+.dohra-view-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+.dohra-view-tab {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dohra-view-tab:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+.dohra-view-tab.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+
+.dohra-view-tab.active .dohra-tab-badge {
+    background: #334155;
+    color: #ffd916;
+}
+
+.dohra-tab-badge {
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+/* Top Banner / Summary Box */
+.dohra-view-banner {
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.dohra-view-banner.heatmap-banner {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+}
+
+.dohra-view-banner.trend-banner {
+    background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+    border: 1px solid #fef08a;
+}
+
+.dohra-view-banner.listings-banner {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border: 1px solid #fed7aa;
+}
+
+.dohra-view-banner.deals-banner {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border: 1px solid #fbcfe8;
+}
+
+.dohra-banner-title h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #0f172a;
+}
+
+.dohra-banner-title p {
+    font-size: 13px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.dohra-banner-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dohra-stat-pill {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dohra-stat-pill span.label {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.dohra-stat-pill strong.val {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Visual Widget Areas */
+.dohra-visual-widget {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+/* Heatmap Interactive Visual */
+.dohra-heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.dohra-heatmap-card {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dohra-heatmap-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dohra-heatmap-card.active {
+    box-shadow: 0 0 0 2px #0f172a, 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.dohra-heatmap-card.zone-high {
+    background: #fff7ed;
+    border-color: #ffedd5;
+    color: #9a3412;
+}
+
+.dohra-heatmap-card.zone-mid-high {
+    background: #fefce8;
+    border-color: #fef9c3;
+    color: #854d0e;
+}
+
+.dohra-heatmap-card.zone-mid {
+    background: #f0f9ff;
+    border-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.dohra-heatmap-card.zone-entry {
+    background: #f0fdf4;
+    border-color: #dcfce7;
+    color: #166534;
+}
+
+.dohra-heatmap-card.zone-comm {
+    background: #faf5ff;
+    border-color: #f3e8ff;
+    color: #6b21a8;
+}
+
+.dohra-heatmap-card .zone-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.dohra-heatmap-card .zone-rate {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.dohra-heatmap-card .zone-sub {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+/* Trend Interactive Visual */
+.dohra-trend-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.dohra-quarter-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.dohra-quarter-card:hover {
+    border-color: #ffd916;
+    transform: translateY(-2px);
+}
+
+.dohra-quarter-card.active {
+    background: #fefce8;
+    border-color: #eab308;
+    box-shadow: 0 0 0 2px #eab308;
+}
+
+.dohra-quarter-card .q-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 2px;
+}
+
+.dohra-quarter-card .q-rate {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.dohra-quarter-card .q-gain {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0e9f6e;
+    margin-top: 4px;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #def7ec;
+}
+
+/* Listings Interactive Brackets */
+.dohra-brackets-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.dohra-bracket-btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #334155;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dohra-bracket-btn:hover {
+    border-color: #ea580c;
+    color: #ea580c;
+}
+
+.dohra-bracket-btn.active {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+}
+
+.dohra-bracket-btn .b-count {
+    background: rgba(0, 0, 0, 0.08);
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 10px;
+}
+
+.dohra-bracket-btn.active .b-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+/* Filter & Search Controls Toolbar */
+.dohra-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+    background: #f8fafc;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.dohra-search-box {
+    position: relative;
+    flex: 1 1 240px;
+    max-width: 380px;
+}
+
+.dohra-search-box input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px 8px 36px;
+    font-size: 13.5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1e293b;
+    outline: none;
+    transition: border 0.2s ease;
+    box-sizing: border-box;
+}
+
+.dohra-search-box input:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.dohra-search-box .icon-search {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.dohra-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.dohra-filter-select {
+    height: 40px;
+    padding: 6px 30px 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M8 11.5l-5-5h10l-5 5z'/%3E%3C/svg%3E") no-repeat right 10px center;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dohra-filter-select:focus {
+    border-color: #0284c7;
+}
+
+.dohra-reset-btn {
+    height: 40px;
+    padding: 0 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #64748b;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dohra-reset-btn:hover {
+    color: #dc2626;
+    border-color: #fca5a5;
+    background: #fef2f2;
+}
+
+/* Data Table Styling (Strictly Overrides Any Hide Rules) */
+.dohra-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+table.dohra-table {
+    display: table !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 680px;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    text-align: left;
+    margin: 0 !important;
+}
+
+table.dohra-table thead {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+table.dohra-table thead th {
+    padding: 13px 16px;
+    font-weight: 700;
+    color: #475569;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+table.dohra-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s ease;
+}
+
+table.dohra-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+table.dohra-table tbody td {
+    padding: 14px 16px;
+    color: #334155;
+    vertical-align: middle;
+}
+
+/* Typography in table */
+.prop-title-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.prop-title-cell strong {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.prop-title-cell span.loc {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.rate-cell {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0369a1;
+    white-space: nowrap;
+}
+
+.total-cell {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.badge-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.badge-green {
+    background: #def7ec;
+    color: #03543f;
+}
+
+.badge-blue {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.badge-amber {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-purple {
+    background: #f3e8ff;
+    color: #6b21a8;
+}
+
+/* Mobile Property Cards (Hidden on desktop, shown on mobile) */
+.dohra-mobile-cards {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.dohra-m-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dohra-m-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.dohra-m-card-rates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 10px 0;
+    border: 1px solid #edf2f7;
+}
+
+.dohra-m-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 8px;
+}
+
+/* Pagination Toolbar */
+.dohra-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.dohra-page-info {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.dohra-page-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dohra-page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.dohra-page-btn:hover:not(:disabled) {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.dohra-page-btn.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+}
+
+.dohra-page-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Empty State */
+.dohra-empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px dashed #cbd5e1;
+    margin: 16px 0;
+}
+
+.dohra-empty-state .empty-icon {
+    font-size: 40px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.dohra-empty-state h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.dohra-empty-state p {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 16px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Loading State (Shimmer Skeleton) */
+.dohra-loading-skeleton {
+    padding: 20px 0;
+}
+
+.dohra-skeleton-row {
+    height: 52px;
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: dohra-shimmer 1.5s infinite;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+@keyframes dohra-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Mobile Media Queries */
+@media screen and (max-width: 768px) {
+    .dohra-detail-container {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .dohra-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dohra-view-tabs {
+        gap: 6px;
+        padding-bottom: 8px;
+    }
+
+    .dohra-view-tab {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .dohra-view-banner {
+        padding: 14px 16px;
+    }
+
+    .dohra-banner-title h3 {
+        font-size: 17px;
+    }
+
+    .dohra-table-wrap {
+        display: none;
+    }
+
+    .dohra-mobile-cards {
+        display: flex;
+    }
+
+    .dohra-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .dohra-search-box {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .dohra-filters {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .dohra-filter-select, .dohra-reset-btn {
+        width: 100%;
+    }
+
+    .dohra-pagination {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
